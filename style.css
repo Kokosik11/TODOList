@@ -179,7 +179,6 @@ input[type=checkbox]:checked+label::before {
 }
 
 .close {
-    float: right;
     background: none;
     outline: none;
     border: none;
@@ -200,4 +199,43 @@ input[type=checkbox]:checked+label::before {
     height: 150px;
     position: absolute;
     font-size: 0.5rem;
+}
+
+.edit {
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btns {
+    width: 30px;
+    float:right;
+}
+
+.content-input {
+    outline: none;
+    background-color: #343A40;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.37);
+    border: 1px solid rgb(42, 42, 42);
+    color: #96989b;
+    width: 300px;
+    padding: 2px;
+}
+
+.done, .cancel {
+    outline: none;
+    background-color: #343A40;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.37);
+    border: 1px solid rgb(42, 42, 42);
+    padding: 2px;
+    cursor: pointer;
+}
+
+.done {
+    color: green;
+}
+
+.cancel {
+    color: rgb(255, 51, 0);
 }

@@ -29,7 +29,6 @@ function checkboxChange(todoId){
 }
 
 function renderTodo() {
-
     let check = document.getElementById("check");
     check.innerText = "";
     todos.map(todo => {
@@ -37,9 +36,12 @@ function renderTodo() {
         <div class="todo-goal-check">
             <input ${(todo.checked)?"checked":""} onchange="checkboxChange(${todo.id})" class="checkbox" type="checkbox" id="check${todo.id}">
             <label class="check-text-l" for="check${todo.id}">
-                <span>${todo.content}</span>
+                <span id="todoContent${todo.id}">${todo.content}</span>
             </label>
-            <button onclick="deleteTodo(${todo.id})" class="close">X</button> 
+            <div class="btns">
+                <button onclick="deleteTodo(${todo.id})" class="close">X</button>
+                <button onclick="editTodo(${todo.id})" class="edit"><i class="fas fa-edit"></i></button>
+            </div>
         </div>`;
         check.insertAdjacentHTML("afterbegin", forms);
     })
@@ -75,3 +77,28 @@ input.addEventListener("blur", () => {
     console.log("blur")
     document.removeEventListener("keydown", onKeyPress);
 })
+
+function editTodo(id) {
+    const content = document.getElementById("todoContent"+id);
+    content.innerHTML = `
+    <div>
+        <input id="inp${id}" class="content-input" type="text" placeholder="Enter text..."></input>
+        <button onclick="saveEdit(${id})" class="done"><i class="fas fa-check"></i></button>
+        <button onclick="closeEdit(${id})" class="cancel"><i class="fas fa-ban"></i></button>
+    </div>
+    `;
+}
+
+function saveEdit(id) {
+    const input = document.getElementById("inp"+id);
+
+    if(input.value != "") {
+        todos[id].content = input.value;
+        storageData();
+    }
+}
+
+function closeEdit(id) {
+    const content = document.getElementById("todoContent"+id);
+    content.innerHTML = todos[id].content;
+}
