@@ -1,0 +1,203 @@
+* { padding: 0; margin: 0; font-family: 'Comfortaa', cursive; }
+
+body { 
+    background: linear-gradient(160deg, #F06292 50%, #E55C8A 50%);
+    background-size: 100% 100vh; 
+}
+
+.container {
+    background-color: #3C424A;
+    width: 450px;
+    height: 450px;
+    margin: 75px auto;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.404);
+    border-radius: 5px;
+    padding: 25px;
+}
+.container > header {
+    position: relative;
+    text-align: center;
+}
+
+.container > header:before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 75px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.438);
+}
+
+.todo-logo {
+    letter-spacing:10px;
+    font-size: 40px;
+    color: #BA4C71;
+    padding-left: 15px;
+}
+
+.list {
+    line-height: 15px;
+    font-size: 1.4rem;
+    letter-spacing:10px;
+    font-weight: 900;
+    color: #797979;
+    padding-left: 15px;
+}
+
+.tools {
+    margin-top: 30px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    background-color: #343A40;
+    box-sizing: border-box;
+    height: 30px;
+    width: 85%;
+    border: 1px solid rgb(42, 42, 42);
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.37);
+    padding: 5px;
+    color: #61666F;
+    float: left;
+    transition: .25s;
+}
+
+.input > input {
+    background: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-left: 5px;
+    color: #96989b;
+}
+
+.input > input::placeholder {
+    color: #61666F;
+}
+
+.tools > button {
+    height: 30px;
+    width: 14%;
+    float: right;
+    background-color: #343A40;
+    outline: none;
+    border: 1px solid rgb(42, 42, 42);
+    color: #bbbbbb;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.37);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.tools > button:focus, .tools > button:hover {
+    /* background-color: #42484e;
+     */
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.37);
+    transition: .25s;
+}
+
+.checkbox:checked + .check-text-l {
+    text-decoration: line-through;
+}
+
+.content {
+    overflow: auto;
+    height: 275px;
+    margin: 75px 0;
+}
+
+.todo-goal-check {
+    position: relative;
+    color: white;
+    font-size: 0.8rem;
+    padding: 7px;
+}
+
+.todo-goal-check::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 30px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.438);
+}
+
+input[type=checkbox] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+input[type=checkbox]+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+input[type=checkbox]+label::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.37);
+    border: 1px solid rgb(42, 42, 42);
+    background-color: #484F59;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+input[type=checkbox]:checked+label::before {
+    content: "\2713";
+    text-align: center;
+    text-decoration: none !important;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: none; 
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #343A40; 
+}
+
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #444c53; 
+}
+
+.close {
+    float: right;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.context {
+    position: relative;
+    float:right; 
+    color: #868a8d;
+    font-size: 1.2rem;
+    line-height: 8px;
+    cursor: pointer;
+}
+
+.context-menu {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    font-size: 0.5rem;
+}
